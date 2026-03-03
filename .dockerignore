@@ -1,0 +1,12 @@
+target/
+*.db
+*.db-wal
+*.db-shm
+__pycache__/
+*.pyc
+.git/
+.github/
+docs/
+*.md
+!README.md
+benchmark.sh

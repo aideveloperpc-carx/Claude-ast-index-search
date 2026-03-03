@@ -1,0 +1,11 @@
+[project]
+name = "ast-index-mcp"
+version = "1.0.0"
+description = "MCP server wrapping ast-index CLI for code search and navigation"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+ast-index-mcp = "mcp_server.server:main"

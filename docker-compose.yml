@@ -1,0 +1,18 @@
+services:
+  ast-index-mcp:
+    image: ast-index-mcp:latest
+    build: .
+    stdin_open: true
+    tty: false
+    volumes:
+      # Mount the project to index at /workspace
+      - ${PROJECT_PATH:-.}:/workspace:ro
+      # Persist index cache between restarts
+      - ast-index-cache:/root/.cache/ast-index
+    environment:
+      - AST_INDEX_BIN=/usr/local/bin/ast-index
+      - AST_INDEX_PROJECT_ROOT=/workspace
+    restart: unless-stopped
+
+volumes:
+  ast-index-cache:
